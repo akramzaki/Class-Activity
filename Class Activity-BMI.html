@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by anonymous (http://jsbin.com/raruvujawe/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>BMI Calculator</title>
+</head>
+<body>
+  <form>
+    <p>
+      <label>Weight(kg):</label>
+      <input type="text" id="weight"><br>
+      <label>Height(m):</label>
+      <input type="text" id="height"><br>
+    </p>
+    <button id="reset">Clear</button>
+    <button type="button" id="submit" onClick="calculateBMI()">Calculate</button>
+  </form>
+  
+  
+  <div><br>
+    <div id="bmi"></div>
+  </div>
+    
+<script id="jsbin-javascript">
+function calculateBMI(){
+ 
+  var weight = parseFloat(document.getElementById("weight").value);
+  var height = parseFloat(document.getElementById("height").value);
+  var bmi = document.getElementById("bmi");
+  
+  bmi = (weight/(height*height));
+  console.log(bmi);
+  if(bmi<=18.5){
+    document.getElementById("bmi").innerHTML= bmi.toFixed(2) + "You're underweight";
+  }
+  else if(bmi >= 18.5 && bmi<=25){
+    document.getElementById("bmi").innerHTML= bmi.toFixed(2) + "You're normal";
+  }
+  else if(bmi >= 26 && bmi <=30){
+   document.getElementById("bmi").innerHTML= bmi.toFixed(2) + "You're overweight"; 
+  }
+  else
+    document.getElementById("bmi").innerHTML= bmi.toFixed(2) + "You're obese";
+}
+</script>
+</body>
+</html>

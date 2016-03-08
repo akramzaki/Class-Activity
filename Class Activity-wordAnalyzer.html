@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by anonymous (http://jsbin.com/kefifoqudo/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>Word Analyzer</h1>
+<form>
+  Input
+  <input type="text" id="text"><br>
+  <button id="Submit" onClick="count()">Submit</button>
+  <button id="reset">Reset</button>
+  </form>
+  <div id= "count">
+  </div>
+  <div id="vowel">
+    
+  </div>
+  <div id="consonant">
+
+  </div>
+<script id="jsbin-javascript">
+function count(){
+  var str, size=0, vowel=0, con=0, arr, a, b, c;
+  str= document.getElementById('text').value;
+  arr= str.split('');
+  size= arr.length;
+  
+  for(i=0; i<size; i++){
+    
+    if(arr[i]=='a'||arr[i]=='e'||arr[i]=='i'||arr[i]=='o'||arr[i]=='u'){
+      
+      vowel++;
+    }else
+      con++;
+  }
+  
+  a= document.getElementById('count');
+  b= document.getElementById('vowel');
+  c= document.getElementById('consonant');
+  
+  a.innerHTML = "size" + size;
+  b.innerHTML = "vowel" +vowel;
+  c.innerHTML = "consonant"+con;
+  
+  
+}
+</script>
+</body>
+</html>
